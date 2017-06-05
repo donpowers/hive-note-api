@@ -5,11 +5,11 @@ curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiU5YTliNWEwOTAwZGZlNzhkZmNlMDYzOTIwYmFmNmE3MAY6BkVG--6ed6a500bae468e081d441b4f4760d09dbd59e12" \
+  --header "Authorization: Token token=BAhJIiUyNmEzOGQ3ODVhNzMyN2I2ZTJkZmNmZDVkYWU4ZDE4ZQY6BkVG--c161678599d17b2a350ee5c49d599ba49c4fde59" \
   --data '{
     "note": {
-      "hive_name": "Hive Two",
-      "observation_date": "2017-06-05",
+      "hive_name": "Hive Two Jake",
+      "observation_date": "2017-08-05",
       "observe": "test the note feature",
       "task": "remove drone brood",
       "task_due_date": "2017-07-05",
@@ -22,7 +22,7 @@ URL_PATH="/notes"
 curl "${API}${URL_PATH}/$" \
   --include \
   --request GET
-  --header "Authorization: Token token=BAhJIiVhN2MyNDk1MDUwMmEzZmE1NzNkNmZlNzRiNTNhMzRmMwY6BkVG--096f95db9a6660558f38d319b1f9395cfa660b3b"
+  --header "Authorization: Token token=BAhJIiUyNmEzOGQ3ODVhNzMyN2I2ZTJkZmNmZDVkYWU4ZDE4ZQY6BkVG--c161678599d17b2a350ee5c49d599ba49c4fde59"
 
 // update note
 echo

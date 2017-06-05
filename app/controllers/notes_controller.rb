@@ -13,6 +13,10 @@ class NotesController < OpenReadController
     render json: @note
   end
 
+  def my_notes
+    render json: current_user.notes.order(observation_date: :desc)
+  end
+
   # POST /notes
   def create
     @note = current_user.notes.build(note_params)

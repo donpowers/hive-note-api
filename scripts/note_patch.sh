@@ -18,14 +18,20 @@ curl "${API}${URL_PATH}" \
   }'
 
 // Get all notes
+API="${API_ORIGIN:-http://localhost:4741}"
+URL_PATH="/notes"
+curl "${API}${URL_PATH}/$ID" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token=BAhJIiVhN2MyNDk1MDUwMmEzZmE1NzNkNmZlNzRiNTNhMzRmMwY6BkVG--096f95db9a6660558f38d319b1f9395cfa660b3b"
+
+// Get my notes
   API="${API_ORIGIN:-http://localhost:4741}"
-  URL_PATH="/notes"
+  URL_PATH="/my-notes"
   curl "${API}${URL_PATH}/$ID" \
     --include \
     --request GET \
-    --header "Authorization: Token token=BAhJIiVhN2MyNDk1MDUwMmEzZmE1NzNkNmZlNzRiNTNhMzRmMwY6BkVG--096f95db9a6660558f38d319b1f9395cfa660b3b"
-
-// Delete note
+    --header "Authorization: Token token=BAhJIiUyNmEzOGQ3ODVhNzMyN2I2ZTJkZmNmZDVkYWU4ZDE4ZQY6BkVG--c161678599d17b2a350ee5c49d599ba49c4fde59"
 
 // DELETE WITH AUTH
 curl -X "DELETE" http://localhost:4741/notes/3 \
