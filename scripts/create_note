@@ -1,0 +1,77 @@
+// create note
+API="${API_ORIGIN:-http://localhost:4741}"
+URL_PATH="/notes"
+curl "${API}${URL_PATH}" \
+  --include \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=BAhJIiU5YTliNWEwOTAwZGZlNzhkZmNlMDYzOTIwYmFmNmE3MAY6BkVG--6ed6a500bae468e081d441b4f4760d09dbd59e12" \
+  --data '{
+    "note": {
+      "hive_name": "Hive Two",
+      "observation_date": "2017-06-05",
+      "observe": "test the note feature",
+      "task": "remove drone brood",
+      "task_due_date": "2017-07-05",
+      "task_status": "Done"
+    }
+  }'
+// get notes
+API="${API_ORIGIN:-http://localhost:4741}"
+URL_PATH="/notes"
+curl "${API}${URL_PATH}/$" \
+  --include \
+  --request GET
+  --header "Authorization: Token token=BAhJIiVhN2MyNDk1MDUwMmEzZmE1NzNkNmZlNzRiNTNhMzRmMwY6BkVG--096f95db9a6660558f38d319b1f9395cfa660b3b"
+
+// update note
+echo
+API="${API_ORIGIN:-http://localhost:4741}"
+URL_PATH="/notes/7"
+TOKEN="BAhJIiVhN2MyNDk1MDUwMmEzZmE1NzNkNmZlNzRiNTNhMzRmMwY6BkVG--096f95db9a6660558f38d319b1f9395cfa660b3b"
+curl "${API}${URL_PATH}" \
+  --include \
+  --request PATCH \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=$TOKEN" \
+  --data '{
+    "note": {
+      "hive_name": "Hive Two",
+      "observation_date": "2017-06-05",
+      "note": "test the note feature",
+      "task": "remove drone brood",
+      "task_due_date": "2017-14-05",
+      "task_status": "Done"
+    }
+  }'
+
+  API="${API_ORIGIN:-http://localhost:4741}"
+  URL_PATH="/hives"
+  curl "${API}${URL_PATH}" \
+    --include \
+    --request POST \
+    --header "Content-Type: application/json" \
+    --header "Authorization: Token token=BAhJIiU1MzcxMTlmNDhmYzY1YmQ2MGZjZWM0OTU4NDVmZTc2YQY6BkVG--98ef1fc9f4c66db475788937eec734025d190239" \
+    --data '{
+      "hive": {
+        "hive_name": "Hive Seven",
+        "queen_type": "Russian",
+        "brood_supers": 2,
+        "honey_supers": 2,
+        "hive_location": "Amesbury, NH"
+      }
+    }'
+
+
+    curl --include --request POST http://localhost:4741/hives \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=BAhJIiUyMGY1YjYzNjhkMjFkM2VkNzQ1MjNmMDJiNzljYjljNQY6BkVG--6dba2498e090d17c963f47d26f73b9be8c0e85ef" \
+  --data '{
+    "hive": {
+      "hive_name": "Hive Seven",
+      "queen_type": "Russian",
+      "brood_supers": 2,
+      "honey_supers": 2,
+      "hive_location": "Amesbury, NH"
+    }
+  }'
