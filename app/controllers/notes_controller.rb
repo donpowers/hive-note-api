@@ -14,7 +14,7 @@ class NotesController < OpenReadController
   end
 
   def my_notes
-    render json: current_user.notes.order(observation_date: :desc)
+    render json: current_user.notes.order(hive_name: :desc, observation_date: :desc)
   end
 
   # POST /notes
