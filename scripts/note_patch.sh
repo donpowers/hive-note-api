@@ -8,12 +8,7 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=BAhJIiVlMDJjNTZhN2I4MzJiNTRlMGNkNjc4NGMzY2E5OGViMgY6BkVG--c24fc16c6d52ea811ba88c381ab503b3ec2c1576" \
   --data '{
     "note": {
-      "hive_name": "Hive Two",
-      "observation_date": "2017-06-05",
-      "observe": "test the note feature",
-      "task": "remove drone brood222",
-      "task_due_date": "2017-07-05",
-      "task_status": "Done"
+      "task_status": "In Progress"
     }
   }'
 
@@ -31,7 +26,7 @@ curl "${API}${URL_PATH}/$ID" \
   curl "${API}${URL_PATH}/$ID" \
     --include \
     --request GET \
-    --header "Authorization: Token token=BAhJIiUyNmEzOGQ3ODVhNzMyN2I2ZTJkZmNmZDVkYWU4ZDE4ZQY6BkVG--c161678599d17b2a350ee5c49d599ba49c4fde59"
+    --header "Authorization: Token token=BAhJIiVhMWYwZjVlMzJkNWRlNTFmZDgwY2ExMzA4NjBhMmRkYgY6BkVG--e3077a649451709536c21747b1da77e5b6838ca4"
 
 // DELETE WITH AUTH
 curl -X "DELETE" http://localhost:4741/notes/3 \
